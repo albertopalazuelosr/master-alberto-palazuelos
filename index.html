@@ -59,11 +59,7 @@
     <h2>Preguntas frecuentes</h2>
     <details>
       <summary>Pregunta frecuente 1</summary>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-      <picture>
-        <source type="image/avif" srcset="/imagenes/html-cheatsheet.avif">
-        <img src="/imagenes/html-cheatsheet.png" loading="lazy" alt="cheatsheet de html" style="width: 100%; height: 600;">
-      </picture>
+      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p
     </details>
     <details>
       <summary>Pregunta frecuente 2</summary>
@@ -85,6 +81,27 @@
     <code>
       Redirect 301 example.com/store https://www.amazon.com/s?marketplaceID=...
     </code>
+  </section>
+  <section id="multimedia">
+    <h2>Sección de multimedia</h2>
+      <h3>Vídeos</h3>
+      <video loading="lazy" width="400" height="400" autoplay loop muted poster="imagenes/hand-pointer.png">
+        <source src="video/COLECCION_CRETA_25.ogv" type="video/ogvv">
+        <source src="video/COLECCION_CRETA_25.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+      <h3>Imagenes</h3>
+      <picture>
+        <source type="image/avif" srcset="/imagenes/html-cheatsheet.avif">
+        <img src="/imagenes/html-cheatsheet.png" loading="lazy" alt="cheatsheet de html" style="width: 100%; height: 600;">
+      </picture>
+      <h3>Iframe</h3>
+      <iframe loading="lazy" width="560" height="315"
+        src="https://www.youtube.com/embed/gIO_7bjpx1M?si=USZEDIVTvjxWO-S-"
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+      <iframe loading="lazy" width="560" height="315"src="https://fitgeneration.es/calculadora/harris-benedict/" frameborder="0"></iframe>
   </section>
   <footer>
     (c) <a href="mailto:albertopalazuelosr@gmail.com">Alberto Palazuelos</a>
