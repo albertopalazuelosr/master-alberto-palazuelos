@@ -6,41 +6,48 @@
     <link rel="stylesheet" href="/css/estilo.css">
     <title>CSS | Master SEO Test</title>
 
-    <!--.prueba.css  | Toda clase que contenga prueba y css -->
-    <!--#introducción  | Elemento con id="introducción" -->
-    <!--.mainheading  | Toda clase que contengan mainheading -->
-    <!--h2.mainheading  | Toda h2 que contenga en la clase mainheading -->
-    <!--.ejemplo1, .ejemplo2  | Toda elementos que contenga como clase ejemplo1 o ejemplo2 -->
-    <!--.herencias p  | Toda p que esté dentro de un div con clase herencias -->
-    <!--.herencias > p  | Toda p que esté directamente por debajo de un div con clase herencias -->
     
     <style>
+     /* Toda clase que contenga prueba y css */
       .prueba.css {
         font-size: 20px;
       }
+    /* Elemento con id="introducción" */
       #introducción {
         background: blueviolet;
         padding: 10px 50px;
       }
+    /*.mainheading  | Toda clase que contengan mainheading */
       .mainheading {
         font-size: xxx-large;
-      }
-      h2.mainheading {
-        font-size: 40px;
       }
       .elemento {
         font-size: 22px;
       }
+    /*h2.mainheading  | Toda h2 que contenga en la clase mainheading */
+      h2.mainheading {
+        font-size: 40px;
+      }
+    /*.ejemplo1, .ejemplo2  | Toda elementos que contenga como clase ejemplo1 o ejemplo2 */
       .ejemplo1, .ejemplo2 {
          color: blue;
       }
+    /*.herencias p  | Toda p que esté dentro de un div con clase herencias */
       .herencias p {
          color: brown;
       }
+    /*.herencias > p  | Toda p que esté directamente por debajo de un div con clase herencias */
       .herencias > p {
          color: blueviolet;
       }
-
+      .centimetros {
+          margin-left: 5vw;
+          margin-top: 5vh;
+          padding: 49px;
+          background: brown;
+          width: 10cm;
+          height: 10cm;
+      }
     </style>
 </head>
 <body>
@@ -76,7 +83,7 @@
       </section>
     <section>
       <h2 class="mainheading h2">Carga del CSS</h2>
-      <div class="prueba css segundo parrafo"><span class="ejemplo0">CSS significa carga de estílos en cascadas, lo que implica que lo que está abajo prioriza a lo que va arriba.
+      <div class="prueba css segundo parrafo"><span class="ejemplo0" style="color: brown;">CSS significa carga de estílos en cascadas, lo que implica que lo que está abajo prioriza a lo que va arriba.
         En el caso de que haya estilos contrapuestos, se respetará la última regla.</span><br><span class="ejemplo1">No obstante, esto es perjudicial
         para la carga puesto que, no únicamente le añades código ínutil al CSS, sino que perjudica la experiencia de usuario
         al cargarse en primer lugar una cosa y modificarla a posteriori con la otra.</span>
@@ -106,6 +113,10 @@
               <td>Fila 3 columna 3</td>
             </tr>
         </table>
+  </section>
+  <section id="ejercicio-medidas">
+    <H2>EJERCICIO DE CENTÍMETROS</H2>
+    <div class="centimetros">10 CENTÍMETROS</div>
   </section>
   <section id="faqs">
     <h2>Preguntas frecuentes</h2>
