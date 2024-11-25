@@ -48,6 +48,46 @@
           width: 10cm;
           height: 10cm;
       }
+    /*Uso de display flex */
+
+      .preguntas-frecuentes {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .black-box {
+        position: relative;
+        border: 2px solid black;
+        height: 100px;
+        margin: 30px;
+        z-index: 3;
+      }
+
+      .gray-box {
+        position: absolute;
+        background: lightgray;
+        height: 60px;  
+        width: 70%;
+        left: 50px;
+        top: 50px;
+        z-index: 1;
+      }
+
+      .green-box {
+        position: absolute;
+        background: lightgreen;
+        width: 35%;
+        left: 270px;
+        top: -15px;
+        height: 100px;
+        z-index: 2;
+      }
     </style>
 </head>
 <body>
@@ -89,6 +129,14 @@
         al cargarse en primer lugar una cosa y modificarla a posteriori con la otra.</span>
       </div>
     </section>
+    <section>
+      <h2>Z-index</h2>
+      <div class="container">
+        <div class="black-box">Black box</div>
+        <div class="gray-box">Gray box</div>
+        <div class="green-box">Green box</div>
+      </div>
+    </section>
     <section id="tablas">
         <h2>Tablas HTML</h2>
         <table style="width: 100%;" id="tabla-principal">
@@ -117,21 +165,25 @@
   <section id="ejercicio-medidas">
     <H2>EJERCICIO DE CENTÍMETROS</H2>
     <div class="centimetros">10 CENTÍMETROS</div>
+    <div class="position">Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.
+    </div>
   </section>
   <section id="faqs">
     <h2>Preguntas frecuentes</h2>
-    <details>
-      <summary class="elemento desplegable">Pregunta frecuente 1</summary>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-    </details>
-    <details>
-      <summary>Pregunta frecuente 2</summary>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-    </details>
-    <details>
-      <summary>Pregunta frecuente 3</summary>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-    </details>
+    <div class="preguntas-frecuentes">
+      <details>
+        <summary class="elemento desplegable">Pregunta frecuente 1</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      </details>
+      <details>
+        <summary>Pregunta frecuente 2</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      </details>
+      <details>
+        <summary>Pregunta frecuente 3</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      </details>
+    </div>
   </section>
   <footer>
     (c) <a href="mailto:albertopalazuelosr@gmail.com">Alberto Palazuelos</a>
