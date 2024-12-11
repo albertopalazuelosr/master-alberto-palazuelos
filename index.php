@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/estilo.css">
-    <title>Home | Master SEO Test</title>
-</head>
-<body>
-    <header>
-      <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/sobre-mi.html">Sobre mí</a></li>
-            <li><a href="/contacto.html">Contacto</a></li>
-            <li><a href="/carpeta/archivo-carpeta.html">Archivo dentro de carpeta</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
-            <li><a href="/minificado.html">HTML de INDEX minificado</a></li>
-            <li><a href="/css.html">Explicación CSS</a></li>
-        </ul>
-     </nav>
-    </header>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
+<?php
+  $variable1 = 'Texto de prueba';
+  $variable2 = 'Texto de prueba';
+  $variable3 = 'Texto probando';
+  if($variable1 == $variable2){echo "La variable1 y variable 2 son iguales";}
+  elseif($variable2 != $variable3){echo '</p>La Variable2 y la 3 ya no son iguales';}
+  else{echo 'No se cumplen los condicionales';}
+?>
     <!--Esto es un comentario -->
     <section id="introducción">
         <H1 class="mainheading">Esto es un h1</H1>
         <H1 class="display-none">Esto es un h1</H1>
         <div>Esto no lo es.<p>Esto es un párrafo</p></div>
+        <div>
+        <?php 
+        // Imprime algo como: Monday 8th of August 2005 03:12:46 PM
+        echo date('l jS \of F Y h:i:s A');?>
+        </div>
+        <div><?php echo "Esto es texto con php";?></div>
         <img src="/imagenes/laptop-reading.png" alt="bitmoji en ordenador" style="width: 500px; height: 500px;">
         <div>
           <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
@@ -108,9 +100,4 @@
       </iframe>
       <iframe loading="lazy" width="560" height="315"src="https://fitgeneration.es/calculadora/harris-benedict/" frameborder="0"></iframe>
   </section>
-  <footer>
-    (c) <a href="mailto:albertopalazuelosr@gmail.com">Alberto Palazuelos</a>
-    <a href="https://maps.app.goo.gl/Zfb13M5PRjbquHNU8"><address>Calle Velazquez 114, Sotano Derecha, Madrid, España</address></a>
-  </footer>
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>

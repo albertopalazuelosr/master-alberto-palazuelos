@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/estilo.css">
     <title>CSS | Master SEO Test</title>
-
-    
+    <!-- ¿CÓMO SE PODRÍA HACER AQUÍ PARA INCLUIR EL HEADER EN PHP Y LAS ETIQUETAS STYLE? -->   
     <style>
      /* Toda clase que contenga prueba y css */
       .prueba.css {
@@ -185,9 +184,4 @@
       </details>
     </div>
   </section>
-  <footer>
-    (c) <a href="mailto:albertopalazuelosr@gmail.com">Alberto Palazuelos</a>
-    <a href="https://maps.app.goo.gl/Zfb13M5PRjbquHNU8"><address>Calle Velazquez 114, Sotano Derecha, Madrid, España</address></a>
-  </footer>
-</body>
-</html>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>

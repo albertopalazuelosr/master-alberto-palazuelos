@@ -82,9 +82,4 @@
         <div><p>Div hijo 2</p></div>
         <p>Párrafo 4</p>
     </section>
-    <footer>
-        (c) <a href="mailto:albertopalazuelosr@gmail.com">Alberto Palazuelos</a>
-        <div class="imagencss2"><a href="https://maps.app.goo.gl/Zfb13M5PRjbquHNU8"><address>Calle Velazquez 114, Sotano Derecha, Madrid, España</address></a></div>
-    </footer>
-</body>
-</html>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
