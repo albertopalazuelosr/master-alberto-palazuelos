@@ -5,7 +5,10 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/estilo.css">
     <title>CSS | Master SEO Test</title>
-    <!-- ¿CÓMO SE PODRÍA HACER AQUÍ PARA INCLUIR EL HEADER EN PHP Y LAS ETIQUETAS STYLE? -->   
+    <!-- ¿CÓMO SE PODRÍA HACER AQUÍ PARA INCLUIR EL HEADER EN PHP Y LAS ETIQUETAS STYLE?
+    Respuesta: Simplemente podrías crear otro header, llamado, por ejemplo, header-css.php, en él
+    incluyes todo el header y las etiquetas y solo lo llamas en esta página 
+    -->   
     <style>
      /* Toda clase que contenga prueba y css */
       .prueba.css {
