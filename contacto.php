@@ -1,61 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/estilo.css">
-    <title>Contacto | Master SEO Test</title>
-    <style>
-        .imagencss1 {
-            height: 500px;
-            width: 500px;
-            background-image: url(/imagenes/hand-pointer.png);
-            margin: auto;
-            background-size: 200px;
-            background-repeat: no-repeat;
-            background-position-x: center;
-            transform: scaleX(-1);
-    }
-    .imagencss2 {
-    background-image: url(/imagenes/chincheta.png);
-    background-size: 1em;
-    background-repeat: no-repeat;
-    padding-left: 1.3em;
-    background-position-y: center;
-    }
-    .selectores.avanzados {
-    background: grey;
-    }
-    p:first-child {
-        background: blue;
-        color: aliceblue;
-    }
-    .selectores.avanzados p::first-letter {
-        font-size: 30px;
-        color: green;
-    }
-    .selectores.avanzados div:nth-child(2) {
-        background: green;
-    }
-    a[href^="https:"] {
-        background: yellow;
-    }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/sobre-mi.html">Sobre mí</a></li>
-                <li><a href="/contacto.html">Contacto</a></li>
-                <li><a href="/carpeta/archivo-carpeta.html">Archivo dentro de carpeta</a></li>
-                <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
-                <li><a href="/minificado.html">HTML de INDEX minificado</a></li>
-                <li><a href="/css.html">Explicación CSS</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+$titulo = "Contacto | Alberto P";
+$estado = "en curso";
+define('pagina', "contacto");
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
     <!--Esto es un comentario -->
     <section id="mainsection">
         <H1 class="mainheading">Esto es el h1 de contacto</H1>
@@ -72,7 +19,7 @@
     </section>
     <section class="enlaces-externos">
         <div><a href="https://es.lipsum.com/">Esto es un enlace externo</a></div>
-        <div><a href="/sobre-mi.html">Esto no lo es</a></div>
+        <div><a href="/sobre-mi.php">Esto no lo es</a></div>
     </section>
     <section class="selectores avanzados">
         <p>Párrafo 1</p>

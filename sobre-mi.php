@@ -1,3 +1,6 @@
+<?php
+  define("pagina", "sobre mi");
+?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
     <!--Esto es un comentario -->
     <section id="mainsection">  

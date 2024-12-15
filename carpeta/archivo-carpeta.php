@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
+<?php 
+$estado = "sin optimizar";
+define("pagina", "nueva carpeta");
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
     <!--Esto es un comentario -->
     <section id="mainsection">
         <H1 class="mainheading">Este es un archivo dentro de una carpeta</H1>

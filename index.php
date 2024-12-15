@@ -1,5 +1,10 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
+<?php 
+$titulo = "Master SEO Técnico | Alberto P";
+$estado = "optimizada";
+define("pagina", "inicio");
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
 <?php
+  define("SEOcalidad", "Máster de SEO Técnico de Asdrubal");
   $variable1 = 'Texto de prueba';
   $variable2 = 'Texto de prueba';
   $variable3 = 'Texto probando';
@@ -9,15 +14,21 @@
 ?>
     <!--Esto es un comentario -->
     <section id="introducción">
-        <H1 class="mainheading">Esto es un h1</H1>
+        <H1 class="mainheading">Esto es un h1 con php (<?php echo SEOcalidad ?>) </H1>
         <H1 class="display-none">Esto es un h1</H1>
         <div>Esto no lo es.<p>Esto es un párrafo</p></div>
         <div>
+    <section id="seccion-php">
+        <h2>Estas son funciones PHP</h2>
         <?php 
         // Imprime algo como: Monday 8th of August 2005 03:12:46 PM
         echo date('l jS \of F Y h:i:s A');?>
         </div>
+        <?php
+        echo generarNumeroAleatorio(1,100);
+        ?>
         <div><?php echo "Esto es texto con php";?></div>
+    </section>
         <img src="/imagenes/laptop-reading.png" alt="bitmoji en ordenador" style="width: 500px; height: 500px;">
         <div>
           <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>

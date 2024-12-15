@@ -5,7 +5,38 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/estilo.css">
-    <title>Home | Master SEO Test</title>
+    <title>
+        <?php
+        $tituloprov = "Título provisional";
+        if (empty($titulo)) {
+            if (empty($tituloprov)) {
+                echo "Página sin título";
+            } else {
+                echo "Proyecto del master";
+            }
+        } else {
+            echo $titulo;
+        }
+        ?>
+    </title>
+    <?php
+    include_once $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
+    switch (constant("pagina")) {
+        case 'inicio':
+            break;
+        case 'contacto':
+            echo '<link rel="stylesheet" href="/css/contacto.css">';
+            break; //El error fue no poner este break puesto que no rompía la cadena//
+        case 'sobre mi':
+        case 'nueva carpeta':
+            echo '<link rel="stylesheet" href="/css/otro.css">';
+            break;
+        default:
+            echo '<!-- No pondré css en este caso del Switch Case-->';
+        break;
+    }
+    ?>
+    </title>
 </head>
 <body>
     <header>
@@ -18,6 +49,24 @@
             <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
             <li><a href="/minificado.php">HTML de INDEX minificado</a></li>
             <li><a href="/css.php">Explicación CSS</a></li>
+            <li><a href="/redireccion.php">Redirección</a></li>
         </ul>
      </nav>
+     <?php
+
+    $estado = $estado ?? 'sin optimizar'; // Si la variable no está definida, se asigna "sin optimizar".
+    switch ($estado) {
+    case 'optimizada':
+        echo "Estado: optimizada";
+        break;
+    case 'en curso':
+        echo "Estado: en curso";
+        break;
+    case 'sin optimizar':
+    default: // Cubre el caso de que no esté definida o no coincida.
+        echo "Estado: sin optimizar";
+        break;
+    }
+    ?>
+
     </header>
