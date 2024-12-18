@@ -2,7 +2,8 @@
 $titulo = "Master SEO Técnico | Alberto P";
 $estado = "optimizada";
 define("pagina", "inicio");
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
 <?php
   define("SEOcalidad", "Máster de SEO Técnico de Asdrubal");
   $variable1 = 'Texto de prueba';

@@ -24,6 +24,9 @@
     switch (constant("pagina")) {
         case 'inicio':
             break;
+        case 'css':
+            echo '<link rel="stylesheet" href="/css/pagina-css.css">';
+            break;
         case 'contacto':
             echo '<link rel="stylesheet" href="/css/contacto.css">';
             break; //El error fue no poner este break puesto que no rompía la cadena//
@@ -43,13 +46,12 @@
       <nav>
         <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="/sobre-mi.php">Sobre mí</a></li>
-            <li><a href="/contacto.php">Contacto</a></li>
-            <li><a href="/carpeta/archivo-carpeta.php">Archivo dentro de carpeta</a></li>
+            <li><a href="/sobre-mi">Sobre mí</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/carpeta/archivo-carpeta">Archivo dentro de carpeta</a></li>
             <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
-            <li><a href="/minificado.php">HTML de INDEX minificado</a></li>
-            <li><a href="/css.php">Explicación CSS</a></li>
-            <li><a href="/redireccion.php">Redirección</a></li>
+            <li><a href="/css">Explicación CSS</a></li>
+            <li><a href="/redireccion">Redirección</a></li>
         </ul>
      </nav>
      <?php

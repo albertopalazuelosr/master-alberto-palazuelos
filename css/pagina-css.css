@@ -1,0 +1,80 @@
+     /* Toda clase que contenga prueba y css */
+     .prueba.css {
+        font-size: 20px;
+      }
+    /* Elemento con id="introducción" */
+      #introducción {
+        background: blueviolet;
+        padding: 10px 50px;
+      }
+    /*.mainheading  | Toda clase que contengan mainheading */
+      .mainheading {
+        font-size: xxx-large;
+      }
+      .elemento {
+        font-size: 22px;
+      }
+    /*h2.mainheading  | Toda h2 que contenga en la clase mainheading */
+      h2.mainheading {
+        font-size: 40px;
+      }
+    /*.ejemplo1, .ejemplo2  | Toda elementos que contenga como clase ejemplo1 o ejemplo2 */
+      .ejemplo1, .ejemplo2 {
+         color: blue;
+      }
+    /*.herencias p  | Toda p que esté dentro de un div con clase herencias */
+      .herencias p {
+         color: brown;
+      }
+    /*.herencias > p  | Toda p que esté directamente por debajo de un div con clase herencias */
+      .herencias > p {
+         color: blueviolet;
+      }
+      .centimetros {
+          margin-left: 5vw;
+          margin-top: 5vh;
+          padding: 49px;
+          background: brown;
+          width: 10cm;
+          height: 10cm;
+      }
+    /*Uso de display flex */
+
+      .preguntas-frecuentes {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .black-box {
+        position: relative;
+        border: 2px solid black;
+        height: 100px;
+        margin: 30px;
+        z-index: 3;
+      }
+
+      .gray-box {
+        position: absolute;
+        background: lightgray;
+        height: 60px;  
+        width: 70%;
+        left: 50px;
+        top: 50px;
+        z-index: 1;
+      }
+
+      .green-box {
+        position: absolute;
+        background: lightgreen;
+        width: 35%;
+        left: 270px;
+        top: -15px;
+        height: 100px;
+        z-index: 2;
+      }
