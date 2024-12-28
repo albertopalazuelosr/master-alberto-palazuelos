@@ -15,8 +15,39 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
 ?>
     <!--Esto es un comentario -->
     <section id="introducción">
-        <H1 class="mainheading">Esto es un h1 con php (<?php echo SEOcalidad ?>) </H1>
-        <H1 class="display-none">Esto es un h1</H1>
+        <H1 id="javascript" class="mainheading">Esto es un h1 con php (<?php echo SEOcalidad ?>) </H1>
+        <h2 class="tagjs">fdsfasd</h2>
+        <noscript>Código en noscript con php</noscript>
+        <div class="classjs"></div>
+        <div class="classjs"></div>
+        <div class="classjs"></div>
+        <div class="classjs"></div>
+        <div id="idjs"></div>
+        <div id="queryselector"></div>
+        <div class="queryselector"></div>
+        <div><a href="https://carlos.sanchezdonate.com/">Este texto debería cambiar</a></div>
+        <script>
+        document.getElementById("idjs").innerHTML = "Texto creado con js a partir Id";
+        document.getElementsByClassName("classjs")[0].innerHTML = "Texto creado con js a partir class";
+        document.getElementsByTagName("h2")[0].innerHTML = "Esto es un h2 modificado por js";
+        const collection = document.getElementsByClassName("classjs");
+        for (let i = 0; i < collection.length; i++) {
+        collection[i].innerHTML = "Esto son muchos textos con classjs modificado por js";
+        }
+        document.querySelector("#queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Id";
+        document.querySelector(".queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Class";
+        /* Con este script de aquí se me quitan lo anterior, ¿no debería verdad?
+        const collection = document.querySelector('a[href^="https:"]');
+        for (let i = 0; i < collection.length; i++) {
+        collection[i].innerHTML = "Enlace externo";
+        }
+        */
+        </script>
+        <H1 class="display-none">Esto es un h1 escondido</H1>
+        <p id="firstjs">Mi primer javascript con onclick</p>
+        <button type="button"
+        onclick='document.getElementById("firstjs").innerHTML = "Cambio de texto con js"'>
+        ¡PÚLSAME!</button>
         <div>Esto no lo es.<p>Esto es un párrafo</p></div>
         <div>
     <section id="seccion-php">
@@ -113,3 +144,5 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
       <iframe loading="lazy" width="560" height="315"src="https://fitgeneration.es/calculadora/harris-benedict/" frameborder="0"></iframe>
   </section>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
+<script src="/scripts/prueba.js"></script>
+

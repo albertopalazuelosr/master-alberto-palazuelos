@@ -5,5 +5,10 @@ RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
 RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
 RewriteRule .* - [L,R=404]
 
+# Redirigir URLs que terminan con "/" hacia la misma URL sin "/"
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
 # NOTE! FOR APACHE ON WINDOWS: Add [NC] to RewriteCond like this:
 # RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$" [NC]

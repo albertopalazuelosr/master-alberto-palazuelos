@@ -30,3 +30,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
         <p>Párrafo 4</p>
     </section>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
+    <script>
+    const collection = document.querySelectorAll('a[href^="https:"]');
+        for (let i = 0; i < collection.length; i++) {
+        collection[i].innerHTML = "Enlace externo";
+        }
+        </script>
