@@ -1,14 +1,16 @@
 RewriteEngine on
 
+# No aplicar reglas si es en la carpeta /ejemplo/
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+# Agregar extensión .php a URLs sin extensión
 RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
 
+# Devolver 404 si se accede directamente a URLs con .php en la solicitud
 RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
 RewriteRule .* - [L,R=404]
 
 # Redirigir URLs que terminan con "/" hacia la misma URL sin "/"
+RewriteCond %{REQUEST_URI} !^/ejemplo/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)/$ /$1 [L,R=301]
-
-# NOTE! FOR APACHE ON WINDOWS: Add [NC] to RewriteCond like this:
-# RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$" [NC]

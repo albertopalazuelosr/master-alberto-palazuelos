@@ -50,7 +50,7 @@
             <li><a href="/contacto">Contacto</a></li>
             <li><a href="/carpeta/archivo-carpeta">Archivo dentro de carpeta</a></li>
             <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
-            <li><a href="/css">Explicación CSS</a></li>
+            <li><a href="/csss">Explicación CSS</a></li>
             <li><a href="/redireccion">Redirección</a></li>
         </ul>
      </nav>
