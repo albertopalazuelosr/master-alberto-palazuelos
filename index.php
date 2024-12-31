@@ -36,13 +36,18 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
         }
         document.querySelector("#queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Id";
         document.querySelector(".queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Class";
-        /* Con este script de aquí se me quitan lo anterior, ¿no debería verdad?
-        const collection = document.querySelector('a[href^="https:"]');
-        for (let i = 0; i < collection.length; i++) {
-        collection[i].innerHTML = "Enlace externo";
+        
+        const collectiona = document.querySelectorAll('a[href^="https:"]');
+        for (let 
+        yu = 0;
+         yu < collectiona.length; 
+         yu++) {
+          
+        collectiona[yu].innerHTML = "Enlace externo";
         }
-        */
         </script>
+
+
         <H1 class="display-none">Esto es un h1 escondido</H1>
         <p id="firstjs">Mi primer javascript con onclick</p>
         <button type="button"
