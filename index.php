@@ -3,7 +3,7 @@ $titulo = "Master SEO Técnico | Alberto P";
 $estado = "optimizada";
 define("pagina", "inicio");
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
-include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
+?>
 <?php
   define("SEOcalidad", "Máster de SEO Técnico de Asdrubal");
   $variable1 = 'Texto de prueba';
@@ -37,25 +37,118 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
         document.querySelector("#queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Id";
         document.querySelector(".queryselector").innerHTML = "Texto creado con js a con queryselector a partir de Class";
         
+        /*const boton2 = document.querySelector('.boton2');
+        boton2.addEventListener('click', enlacesexternos);*/
+
+
+        function enlacesexternos() {
         const collectiona = document.querySelectorAll('a[href^="https:"]');
-        for (let 
-        yu = 0;
-         yu < collectiona.length; 
-         yu++) {
-          
-        collectiona[yu].innerHTML = "Enlace externo";
+        for (let yu = 0; yu < collectiona.length; yu++) {
+            const enlace = collectiona[yu];
+            // Comprueba si ya tiene el texto modificado
+            if (enlace.dataset.originalText) {
+                // Si el texto original está guardado, restaura el texto original
+                enlace.innerHTML = enlace.dataset.originalText;
+                enlace.removeAttribute('data-original-text'); // Limpia el atributo
+            } else {
+                // Guarda el texto original en un atributo personalizado
+                enlace.dataset.originalText = enlace.innerHTML;
+                // Cambia el texto al nuevo valor
+                enlace.innerHTML = "ENLACE EXTERNO";
+            }
+          }
         }
+
+        /*activador[0].setAttribute("onclick", "funcionNumero2()");
+
+        function funcionNumero2(){
+        const ejemplazo = document.getElementsByClassName("boton2");
+        for (let i = 0; i < ejemplazo.length; i++) {
+        ejemplazo[i].innerHTML.remove("ENLACE EXTERNO");
+        }
+        activador[0].setAttribute("onclick", "funcioncarlos()");
+        }*/
+
+        let ejemplo= '¡Variable con let!';
+        var testeo = '¡Variable con var!';
+        const constante = '¡Constante!';
+
         </script>
-
-
+        
         <H1 class="display-none">Esto es un h1 escondido</H1>
         <p id="firstjs">Mi primer javascript con onclick</p>
         <button type="button"
-        onclick='document.getElementById("firstjs").innerHTML = "Cambio de texto con js"'>
+        onclick='document.getElementById("firstjs").innerHTML = "Cambio de texto con js" + ejemplo + testeo + constante'>
         ¡PÚLSAME!</button>
         <div>Esto no lo es.<p>Esto es un párrafo</p></div>
-        <div>
-    <section id="seccion-php">
+        <div id="cambiante"></div>
+        <div class="boton" onclick="enlacesexternos()">
+          Púlsame para detectar los enlaces externos (con onclick)
+        </div>
+        <div class="boton2">
+          Púlsame para detectar los enlaces externos (con addEventListener)
+        </div>
+        <script>
+        // Selecciona el div con la clase "boton2"
+        const boton2 = document.querySelector('.boton2');
+
+        // Añade el EventListener al botón
+        boton2.addEventListener('click', enlacesexternos);
+        </script>
+        <script>
+        let tiempo = new Date().getDay();
+        let educacion;
+
+        if (tiempo >= 1 && tiempo <= 4) { // Lunes a jueves (inclusive)
+            educacion = "disfruta de la semana";
+        } else { // Cualquier otro día (viernes, sábado o domingo)
+            educacion = "disfruta del finde";
+        }
+
+        let mes;
+        switch (new Date().getMonth()) {
+            case 0:
+                mes = "Enero";
+                break;
+            case 1:
+                mes = "Febrero";
+                break;
+            case 2:
+                mes = "Marzo";
+                break;
+            case 3:
+                mes = "Abril";
+                break;
+            case 4:
+                mes = "Mayo";
+                break;
+            case 5:
+                mes = "Junio";
+                break;
+            case 6:
+                mes = "Julio";
+                break;
+            case 7:
+                mes = "Agosto";
+                break;
+            case 8:
+                mes = "Septiembre";
+                break;
+            case 9:
+                mes = "Octubre";
+                break;
+            case 10:
+                mes = "Noviembre";
+                break;
+            case 11:
+                mes = "Diciembre";
+                break;
+            default:
+                mes = "Mes desconocido"; // En caso de error
+}
+        document.getElementById("cambiante").innerHTML = "Hola, " + educacion + " ánimo con el mes de " + mes;
+        </script>
+     <section id="seccion-php">
         <h2>Estas son funciones PHP</h2>
         <?php 
         // Imprime algo como: Monday 8th of August 2005 03:12:46 PM
@@ -65,6 +158,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
         echo generarNumeroAleatorio(1,100);
         ?>
         <div><?php echo "Esto es texto con php";?></div>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';
+        ?>
     </section>
         <img src="/imagenes/laptop-reading.png" alt="bitmoji en ordenador" style="width: 500px; height: 500px;">
         <div>
@@ -150,4 +246,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/tablasql.php';?>
   </section>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
 <script src="/scripts/prueba.js"></script>
+
+
+
 

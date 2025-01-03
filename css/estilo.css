@@ -36,3 +36,32 @@ body {
     }
     
 }
+.boton {
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+    padding: 17px 42px;
+    margin: auto;
+}
+.boton2 {
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+    padding: 17px 42px;
+    margin: auto;
+    margin-top: 50px;
+}

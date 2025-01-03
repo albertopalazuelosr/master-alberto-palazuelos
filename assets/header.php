@@ -52,6 +52,7 @@
             <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
             <li><a href="/csss">Explicación CSS</a></li>
             <li><a href="/redireccion">Redirección</a></li>
+            <li><a href="/redireccion-js">Redirección JS</a></li>
         </ul>
      </nav>
      <?php
