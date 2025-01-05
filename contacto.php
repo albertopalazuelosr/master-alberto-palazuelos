@@ -5,7 +5,7 @@ define('pagina', "contacto");
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
     <!--Esto es un comentario -->
     <section id="mainsection">
-        <H1 class="mainheading">Esto es el h1 de contacto</H1>
+        <H1 class="mainheading">Cambio en el branch de SEO</H1>
         <img src="/imagenes/sticker.png" alt="bitmoji money" style="width: 100%; max-width: 500px;">
         <div class="imagencss1">
 
