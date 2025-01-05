@@ -4,7 +4,7 @@ define('pagina', "css");
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
 
     <section id="introducción">
-        <H1 class="mainheading h1">Explicación de CSS</H1>
+        <H1 class="mainheading h1">Explicación de CSS (cambio branch dev)</H1>
     </section>
     <section id="explicacion-apartado">
         <h2 class="mainheading h2">Selectores</h2>
