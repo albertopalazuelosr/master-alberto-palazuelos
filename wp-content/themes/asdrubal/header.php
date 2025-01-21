@@ -16,13 +16,10 @@ wp_footer();// Saca el título que se ha asignado en el back
       <nav>
         <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="/sobre-mi">Sobre mí</a></li>
-            <li><a href="/contacto">Contacto</a></li>
-            <li><a href="/carpeta/archivo-carpeta">Archivo dentro de carpeta</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">Más información</a></li>
-            <li><a href="/csss">Explicación CSS</a></li>
-            <li><a href="/redireccion">Redirección</a></li>
-            <li><a href="/redireccion-js">Redirección JS</a></li>
+            <li><a href="/sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="/blog/category/rastreo-renderizado-indexacion/">Rastreo, renderizado e indexación</a></li>
+            <li><a href="/blog/category/seo-estrategico/">SEO estratégico</a></li>
+            <li><a href="/blog/category/seo-tecnico/">SEO Técnico</a></li>
         </ul>
      </nav>
     </header>

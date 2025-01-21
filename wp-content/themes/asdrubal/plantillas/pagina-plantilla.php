@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__. ('/../header.php');
+/* Template Name: ejemplo */
 ?>
 <div class="generico">
     <div>Plantilla 1</div>

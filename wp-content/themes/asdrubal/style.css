@@ -72,3 +72,62 @@ body {
     margin: auto;
     margin-top: 50px;
 }
+.flexcenter {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas si es necesario */
+    gap: 20px; /* Espacio entre las tarjetas (opcional) */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+/* General Styles for Post Cards */
+.post-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #e0e0e0; /* Borde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 20px; /* Espaciado interno */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+}
+
+/* Hover Effect */
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Section */
+.post-card .post-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00b894; /* Color verde (similar al diseño) */
+    margin-bottom: 15px; /* Separación del contenido */
+    text-align: left;
+    line-height: 1.3;
+}
+
+/* Link Style */
+.post-card a {
+    text-decoration: none;
+    color: inherit; /* Usa el color del título */
+}
+
+/* Description Section */
+.post-card .post-desc {
+    font-size: 0.9em;
+    color: #636e72; /* Color gris oscuro */
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: auto; /* Alinea hacia abajo si hay más espacio */
+}
+
+/* Optional: Responsive Design */
+@media (max-width: 768px) {
+    .post-card {
+        max-width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+}
