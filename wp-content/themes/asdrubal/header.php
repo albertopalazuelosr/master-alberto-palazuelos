@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type='text/css' media='all'>
 <?php
+include 'components/metas-seo.php';
 wp_head();
 wp_footer();// Llama al header.php o al footer.php
 get_header();

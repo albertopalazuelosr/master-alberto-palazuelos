@@ -6,7 +6,11 @@ include_once 'header.php';?>
         <?php the_field( 'descripcion_corta' ); ?>
     </section>
     <section id="contenido">
-        <?php echo the_content();?>
+        <?php 
+         if ( in_Category('festivales')){
+            echo 'Estás en la categoría Festivales';
+         } else {;}
+        echo the_content();?>
     </section>
 </div>
 <?php
