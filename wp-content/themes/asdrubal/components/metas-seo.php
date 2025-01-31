@@ -16,40 +16,39 @@ $url_sin_string = $protocol . '://' . $_SERVER['HTTP_HOST'] . strtok($_SERVER["R
     <?php the_field('custom_meta', $term); ?>
     <link rel="canonical" href="<?php if (get_field ('canonical', $term)){the_field('canonical',$term);} else {echo $url_sin_string;}?>">
    
-
-    <?php
-    // Comprueba si la categoría es 'coches'
-    if ( in_category('festivales') ) {
-    $metadesc_festivales = 'Vive ' . get_field( 'dias' ) . ' días épicos en el Festival de ' . get_field( 'tipo_de_musica' ) . ' en ' . get_field( 'ciudad') . ' (' . get_field( 'pais' ) . ') a partir del ' . get_field( 'fecha') . '. Entradas desde ' . get_field( 'precio' ) . '€. ¡Reserva ya!';
-    ?>
-    <meta name="description" content="<?php echo $metadesc_festivales ;?>">
-    <meta property="og:description" content="<?php echo $metadesc_festivales ;?>">
-    <meta property="twitter:description" content="<?php echo $metadesc_festivales ;?>">
-
-    <?php
-    }
-    else{
-    ?>
-    <meta name="description" content="<?php the_field( 'metadescription', $term ); ?>">
-    <meta property="og:description" content="<?php if ( get_field( 'og_description', $term ) ){the_field( 'og_description', $term );} else{the_field( 'metadescription', $term );}?>">
-    <meta property="twitter:description" content="<?php if ( get_field('twitter_description', $term)){the_field( 'twitter_description', $term );} elseif(get_field( 'og_description', $term)){the_field( 'og_description', $term );} else{the_field( 'metadescription', $term );}?>">
-    <?php ;} ?>
-
-
-    
-
-        
     <!-- Title y Meta descripción -->
-    <title><?php the_field( 'title', $term); ?> | Master SEO</title>
-    <meta name="description" content="<?php the_field( 'metadescription', $term); ?>">
+    <?php
+    $title = get_field('title', $term);
+
+    // Si no hay un título personalizado, usa el título de la página
+    if (!$title) {
+        $title = get_the_title();
+    }
+    ?><title><?php echo esc_html($title); ?> | Master SEO</title>
+ 
+
+    <?php
+        $metadesc = get_field('metadescription', $term);
+        $es_festival = in_category('festivales');
+
+        if (!$metadesc && $es_festival) {
+            $metadesc = 'Vive ' . get_field('dias') . ' días épicos en el Festival de ' . get_field('tipo_de_musica') . 
+                        ' en ' . get_field('ciudad') . ' (' . get_field('pais') . ') a partir del ' . get_field('fecha') . 
+                        '. Entradas desde ' . get_field('precio') . '€. ¡Reserva ya!';
+        }
+
+        // Solo imprimir las etiquetas si $metadesc tiene contenido
+        if (!empty($metadesc)) {
+            ?>
+            <meta name="description" content="<?php echo esc_attr($metadesc); ?>">
+            <meta property="og:description" content="<?php echo esc_attr($metadesc); ?>">
+            <meta property="twitter:description" content="<?php echo esc_attr($metadesc); ?>">
+            <?php
+        }
+    ?>        
 
     <!-- Open Graph -->
-    <meta property="og:title" content="<?php
-    if (get_field('og_title')){
-        the_field( 'og_title', $term);
-    } else{the_field('title',$term);}
-    ?>">
-    <meta property="og:description" content="<?php if (get_field('og_description')){the_field( 'og_description', $term);} else{the_field('metadescription',$term);}?>">
+    <?php $og_title = get_field('og_title', $term) ?: $title;?><meta property="og:title" content="<?php echo esc_attr($og_title); ?> | Master SEO">
     <meta property="og:image" content="<?php if (get_field('og_image')){the_field( 'og_image', $term);} else{ echo 'http://master-seo.test/wp-content/uploads/2025/01/imagen-branding-basico.jpg';}?>">
     <meta property="og:image:secure_url" content="<?php if (get_field('og_image')){the_field( 'og_image', $term);} else{ echo 'http://master-seo.test/wp-content/uploads/2025/01/imagen-branding-basico.jpg';}?>">
     <meta property="og:url" content="<?php if (get_field ('canonical', $term)){the_field('canonical',$term);} else {echo $url_sin_string;}?>">
@@ -58,17 +57,6 @@ $url_sin_string = $protocol . '://' . $_SERVER['HTTP_HOST'] . strtok($_SERVER["R
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php
-    if (get_field('twitter_title')){
-        the_field('twitter_title', $term);
-    } elseif(get_field('og_title', $term)){the_field('og_title', $term);
-    } else{the_field('title',$term);}
-    ?>">
-    <meta name="twitter:description" content="<?php
-    if (get_field('twitter_description')){
-        the_field('twitter_description', $term);
-    } elseif(get_field('og_description', $term)){the_field('og_description', $term);
-    } else{the_field('metadescription',$term);}
-    ?>">
+    <?php $twitter_title = get_field('twitter_title', $term) ?: $og_title;?><meta name="twitter:title" content="<?php echo esc_attr($twitter_title); ?> | Master SEO">
     <meta name="twitter:image" content="<?php if (get_field('og_image')){the_field( 'og_image', $term);} else{ echo 'http://master-seo.test/wp-content/uploads/2025/01/imagen-branding-basico.jpg';}?>">
     <meta name="twitter:url" content="<?php if (get_field ('canonical', $term)){the_field('canonical',$term);} else {echo $url_sin_string;}?>">
