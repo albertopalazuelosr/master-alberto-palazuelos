@@ -148,6 +148,18 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 }
         document.getElementById("cambiante").innerHTML = "Hola, " + educacion + " ánimo con el mes de " + mes;
         </script>
+    <section id="ahref">
+      <h2>Sección de enlaces relativos y absolutos</h2>
+      <div><a href="ejemplo" rel="noopener">Url absoluta desde ahref="https://master-seo.test/ejemplo"</a></div>
+      <div><a href="ejemplo">Enlace desde ahref="ejemplo"</a></div>
+      <div><a href="/ejemplo/juan">Enlace desde ahref="/ejemplo/juan"</a></div>
+      <div><a href="/ejemplo">Enlace desde ahref="/ejemplo"</a></div>
+      <div><a href="ejemplo/juan">Enlace desde ahref="ejemplo/juan"</a></div>
+      <div><a href="ejemplo/ejemplo2/ejemplo3">Enlace desde ahref="ejemplo/juan"</a></div>
+      <div>Esto es un <span id="ofc">enlace ofuscado</span></div>
+
+
+    </section>
      <section id="seccion-php">
         <h2>Estas son funciones PHP</h2>
         <?php 
@@ -246,6 +258,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
   </section>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
 <script src="/scripts/prueba.js"></script>
+<script src="/scripts/ofuscacion.js"></script>
 
 
 
