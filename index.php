@@ -155,7 +155,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
       <div><a href="/ejemplo/juan">Enlace desde ahref="/ejemplo/juan"</a></div>
       <div><a href="/ejemplo">Enlace desde ahref="/ejemplo"</a></div>
       <div><a href="ejemplo/juan">Enlace desde ahref="ejemplo/juan"</a></div>
-      <div><a href="ejemplo/ejemplo2/ejemplo3">Enlace desde ahref="ejemplo/juan"</a></div>
+      <div><a href="ejemplo/ejemplo2/ejemplo3">Enlace desde ahref="ejemplo/ejemplo2/ejemplo3"</a></div>
       <div>Esto es un <span id="ofc">enlace ofuscado</span></div>
 
 
