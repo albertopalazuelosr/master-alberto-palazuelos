@@ -1,0 +1,18 @@
+#Esto es un comentario
+
+User-agent: Yandexbot
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /oferta-black-friday
+
+User-agent: AdsBot
+User-agent: AdSense
+Disallow: /oferta-black-friday
+
+User-agent: *
+Disallow: /nomeves/cartagena/$
+Disallow: /nomeves/sources/*.css
+Disallow: /scripts/*.js?prescindible
+
+Sitemap: https://master-seo.test/sitemap.xml
