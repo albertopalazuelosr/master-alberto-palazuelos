@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://master-seo.test/</loc>
     <lastmod>2025-04-28</lastmod>
+    <image:image>
+      <image:loc>https://master-seo.test/imagenes/laptop-reading.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://master-seo.test/contacto</loc>
     <lastmod>2025-04-28</lastmod>
+    <image:image>
+      <image:loc>https://master-seo.test/imagenes/sticker.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://master-seo.test/csss</loc>
     <lastmod>2025-04-28</lastmod>
+    <image:image>
+      <image:loc>https://master-seo.test/imagenes/sticker.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://master-seo.test/sobre-mi</loc>
     <lastmod>2025-04-28</lastmod>
+    <image:image>
+      <image:loc>https://master-seo.test/imagenes/hand-pointer.png</image:loc>
+    </image:image>
   </url>
 </urlset>
