@@ -1,10 +1,10 @@
 <?php
 function bannerfooter(){
-    $imageUrl = "/imagenes/banner-navidad.jpg"; // Ruta de la imagen
-    $altText = "Banner de Navidad"; // Texto alternativo
+    $imageUrl = "/imagenes/banner-primavera.jpg"; // Ruta de la imagen
+    $altText = "Banner de Primavera"; // Texto alternativo
     $width = "100%"; // Ancho de la imagen
     $height = "auto"; // Altura de la imagen
-    $title = "Feliz Navidad 🎄";
+    $title = "¡Feliz Primavera!";
 
     return "<img src='$imageUrl' title='$title' alt='$altText' style='width: $width; height: $height;'>";
 }

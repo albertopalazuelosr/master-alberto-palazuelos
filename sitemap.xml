@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
+xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://master-seo.test/</loc>
     <lastmod>2025-04-28</lastmod>
     <image:image>
       <image:loc>https://master-seo.test/imagenes/laptop-reading.png</image:loc>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/gIO_7bjpx1M/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Ilia Topuria EXPULSA a Max Holloway de la DIVISIÓN</video:title>
+      <video:description>Análisis de la situación actual de Max Holloway después de que Ilia Topuria lo expulsará la divisón después de su derrota en las Vegas</video:description>
+      <video:player_loc>https://www.youtube.com/embed/gIO_7bjpx1M?si=9E1NWRsmLYaMOpA_</video:player_loc>
+      <!-- Etiquetas opcionales video-->
+      <video:duration>638</video:duration>
+      <video:publication_date>2025-04-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:rating>5.0</video:rating> <!-- Necesario automatizar-->
+      <video:view_count>3000</video:view_count> <!-- Necesario automatizar-->
+      <video:restriction relationship="allow">ES MX</video:restriction>	
+      <video:platform relationship="disallow">tv</video:platform>	<!-- Útil si tenemos 2 videos vertical y horizontal en función de la pantalla-->
+      <video:requires_subscription>yes</video:requires_subscription>
+      <video:uploader>Alberto Palazuelos</video:uploader>	
+      <video:live>yes</video:live>
+      <video:tag>seo, sitemap, rastreo, videos</video:tag>	
+    </video:video>
   </url>
   <url>
     <loc>https://master-seo.test/contacto</loc>
@@ -27,5 +48,17 @@
     <image:image>
       <image:loc>https://master-seo.test/imagenes/hand-pointer.png</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://master-seo.test/noticias</loc>
+    <lastmod>2025-04-28</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>Beatriz Corredor rompe su silencio sin dar explicaciones claras del apagón y no planea dimitir</news:name> <!-- H1 -->
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-28T09:30+01:00</news:publication_date>
+      <news:title>Beatriz Corredor rompe su silencio, ¡NO VOY A DIMITIR!</news:title>
+    </news:news>
   </url>
 </urlset>
