@@ -6,5 +6,5 @@ function trespost(){
     include $plantillas .'trespost.php';
 }
 add_shortcode('lastest_posts', 'tresposts');
-
 ?>
+
