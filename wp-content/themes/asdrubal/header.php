@@ -5,9 +5,7 @@
 <?php
 include 'components/metas-seo.php';
 wp_head();
-wp_footer();// Llama al header.php o al footer.php
 get_header();
-wp_footer();// Saca el título que se ha asignado en el back
 ;?>
 </head>
 <body>
