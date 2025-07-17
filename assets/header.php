@@ -43,8 +43,11 @@
 </head>
 <body>
     <header>
-      <nav>
-        <ul>
+     <nav class="navbar-header">
+        <div class="hamburger-bar">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul id="nav-menu">
             <li><a href="/">Inicio</a></li>
             <li><a href="/sobre-mi">Sobre mí</a></li>
             <li><a href="/contacto">Contacto</a></li>
@@ -55,6 +58,28 @@
             <li><a href="/redireccion-js">Redirección JS</a></li>
         </ul>
      </nav>
+<script>
+  const menu = document.getElementById("nav-menu");
+  const button = document.getElementById("hamburger-btn");
+
+  function toggleMenu() {
+    menu.classList.toggle("show");
+    // Cambiar ícono entre ☰ y ❌
+    button.textContent = menu.classList.contains("show") ? "✖" : "☰";
+  }
+
+  button.addEventListener("click", toggleMenu);
+
+  // Cierra menú al hacer clic en un enlace
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("show");
+      button.textContent = "☰"; // restaurar hamburguesa
+    });
+  });
+</script>
+
+
      <?php
 
     $estado = $estado ?? 'sin optimizar'; // Si la variable no está definida, se asigna "sin optimizar".

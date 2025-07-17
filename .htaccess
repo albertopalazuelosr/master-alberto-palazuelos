@@ -24,3 +24,5 @@ RewriteCond %{REQUEST_URI} !^/ejemplo/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+Redirect 301 /mueble-tv-televisin-roble-chimenea-elctrica https://skrauthome.com/es/muebles-tv-modernos/345-mueble-tv-television-roble-chimenea-electrica-8435736455558
