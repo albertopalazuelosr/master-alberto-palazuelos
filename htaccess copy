@@ -1,0 +1,46 @@
+RewriteEngine On
+
+# Redirigir a la versión móvil si se accede desde un dispositivo móvil
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+RewriteCond %{REQUEST_URI} !^/devices/movil/ [NC]
+RewriteCond %{HTTP_USER_AGENT} !ipad [NC]
+RewriteCond %{HTTP_USER_AGENT} !tablet [NC]
+# Esto son excepciones que se han añadido, para que no se mezclen los user-agents de Apple y evitar errores
+RewriteRule ^(.*)$ /devices/movil/$1 [L]
+
+# Redirigir a la versión de tablet si se accede desde una tablet o Mac
+RewriteCond %{HTTP_USER_AGENT} "ipad|tablet|Macintosh|Mac OS X|kindle|playbook|silk" [NC]
+RewriteCond %{REQUEST_URI} !^/devices/tablet/ [NC]
+RewriteCond %{HTTP_USER_AGENT} !android [NC]
+RewriteCond %{HTTP_USER_AGENT} !iphone [NC]
+RewriteRule ^(.*)$ /devices/tablet/$1 [L]
+
+# A PARTIR DE AQUÍ EL RESTO DE TUS REGLAS
+
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTP_HOST} ^www.master-seo.test [NC]
+RewriteRule (.*) https://master-seo.test/$1 [R=301,L]
+</IfModule>
+
+RewriteEngine on
+
+# No aplicar reglas si es en la carpeta /ejemplo/
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+# Agregar extensión .php a URLs sin extensión
+RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
+
+# Devolver 404 si se accede directamente a URLs con .php en la solicitud
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+# Redirigir URLs que terminan con "/" hacia la misma URL sin "/"
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+

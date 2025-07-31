@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://master-seo.test/prueba-idiomas.php</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://master-seo.test/en/test.php"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="es"
+               href="https://master-seo.test/prueba-idiomas.php"/>
+  </url>
+    <url>
+    <loc>https://master-seo.test/en/test.php</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://master-seo.test/en/test.php"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="es"
+               href="https://master-seo.test/prueba-idiomas.php"/>
+  </url>
+</urlset>

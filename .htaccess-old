@@ -1,0 +1,48 @@
+# Activar motor de reescritura
+RewriteEngine On
+
+##########################
+# 1. Redirección a HTTPS y sin www
+##########################
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.master-seo\.test$ [NC]
+RewriteRule ^ https://master-seo.test%{REQUEST_URI} [R=301,L]
+
+##########################
+# 2. Redirección por dispositivos (AWD)
+# IMPORTANTE: excluye /devices/, /api/, /admin/
+##########################
+RewriteCond %{REQUEST_URI} !^/devices/ [NC]
+RewriteCond %{REQUEST_URI} !^/api/ [NC]
+RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+
+# Redirección a móvil
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+RewriteCond %{HTTP_USER_AGENT} !ipad [NC]
+RewriteCond %{HTTP_USER_AGENT} !tablet [NC]
+RewriteRule ^(.*)$ /devices/movil/$1 [L]
+
+# Redirección a tablet
+RewriteCond %{HTTP_USER_AGENT} "ipad|tablet|Macintosh|Mac OS X|kindle|playbook|silk" [NC]
+RewriteCond %{HTTP_USER_AGENT} !android [NC]
+RewriteCond %{HTTP_USER_AGENT} !iphone [NC]
+RewriteRule ^(.*)$ /devices/tablet/$1 [L]
+
+##########################
+# 3. Ocultar extensiones .php (excepto en /ejemplo/)
+##########################
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Bloquear acceso directo a .php
+RewriteCond %{THE_REQUEST} "\.php" [NC]
+RewriteRule ^ - [R=404,L]
+
+##########################
+# 4. Eliminar barra final (excepto si es directorio real o en /ejemplo/)
+##########################
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ /$1 [L,R=301]
