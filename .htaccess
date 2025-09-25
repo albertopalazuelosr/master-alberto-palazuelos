@@ -1,0 +1,161 @@
+# Activar motor de reescritura
+RewriteEngine On
+
+
+
+ErrorDocument 401 '<h1>Error contraseñas</h1>'
+
+
+##########################
+# 1. Redirección a HTTPS y sin www
+##########################
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.master-seo\.test$ [NC]
+RewriteRule ^ https://master-seo.test%{REQUEST_URI} [R=301,L]
+
+##########################
+# 2. Redirección por dispositivos (AWD)
+# IMPORTANTE: excluye /devices/, /api/, /admin/
+##########################
+RewriteCond %{REQUEST_URI} !^/devices/ [NC]
+RewriteCond %{REQUEST_URI} !^/api/ [NC]
+RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+
+# Redirección a móvil
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+RewriteCond %{HTTP_USER_AGENT} !ipad [NC]
+RewriteCond %{HTTP_USER_AGENT} !tablet [NC]
+RewriteRule ^(.*)$ /devices/movil/$1 [L]
+
+# Redirección a tablet
+RewriteCond %{HTTP_USER_AGENT} "ipad|tablet|Macintosh|Mac OS X|kindle|playbook|silk" [NC]
+RewriteCond %{HTTP_USER_AGENT} !android [NC]
+RewriteCond %{HTTP_USER_AGENT} !iphone [NC]
+RewriteRule ^(.*)$ /devices/tablet/$1 [L]
+
+##########################
+# 3. Ocultar extensiones .php (excepto en /ejemplo/)
+##########################
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Bloquear acceso directo a .php
+RewriteCond %{THE_REQUEST} "\.php" [NC]
+RewriteRule ^ - [R=404,L]
+
+##########################
+# 4. Eliminar barra final (excepto si es directorio real o en /ejemplo/)
+##########################
+RewriteCond %{REQUEST_URI} !^/ejemplo/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+ 
+##########################
+# 5. Ejercicio redirecciones y códigos de respuesta
+##########################
+RedirectMatch 301 ^/directorio1(.*)$ https://master-seo.test/directorio2/$1
+RedirectMatch 503 ^/codigo503$
+RedirectMatch 302 ^/directorio3(.*)$ https://master-seo.test/contacto
+RedirectMatch 404 ^/es/muestra/(.*)$
+RedirectMatch 404 ^/fr/muestra/(.*)$
+RedirectMatch 404 ^/de/muestra/(.*)$
+RedirectMatch 404 ^/nl/muestra/(.*)$
+RedirectMatch 404 ^/pt/muestra/(.*)$
+RedirectMatch 404 ^/en/muestra/(.*)$
+
+##########################
+# 6. Ejercicio bloqueos
+##########################
+
+#<If "%{HTTP_HOST} == 'master-seo.test'">
+#User: user Password: password
+#<IfModule mod_authn_file.c>
+#AuthUserFile "C:\Users\DRIZA\Documents\Github\master-seo\pass\.htpasswd"
+#AuthName "Iniciar sesión requerido"
+#AuthType Basic
+#Require valid-user
+#</IfModule>
+#</If>
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/contacto [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*(Googlebot|Bingbot).*$ [NC]
+RewriteRule ^.*$ - [F,L]
+
+    <Limit GET POST>
+        Order Allow,Deny
+        Allow from all
+        Deny from 195.242.241.40
+    </Limit>
+
+##########################
+# 7. Ejercicio de WPO
+##########################
+
+<IfModule mod_brotli.c>
+    AddType x-font/woff .woff
+    AddType x-font/ttf .ttf
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+    AddOutputFilterByType BROTLI_COMPRESS image/x-icon
+    AddOutputFilterByType BROTLI_COMPRESS text/plain
+    AddOutputFilterByType BROTLI_COMPRESS text/html
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+    AddOutputFilterByType BROTLI_COMPRESS application/pdf
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/xml
+    AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/x-font-ttf
+    AddOutputFilterByType BROTLI_COMPRESS application/vnd.ms-fontobject
+    AddOutputFilterByType BROTLI_COMPRESS font/opentype font/ttf font/eot font/otf
+    AddOutputFilterByType BROTLI_COMPRESS font/woff
+    AddOutputFilterByType BROTLI_COMPRESS font/woff2
+</IfModule>
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 4 months"
+ExpiresByType image/webp "access plus 4 months"
+ExpiresByType image/gif "access plus 4 months"
+ExpiresByType image/png "access plus 4 months"
+ExpiresByType image/jpg "access plus 4 months"
+ExpiresByType image/jpeg "access plus 4 months"
+ExpiresByType video/mp4 "access plus 4 months"
+ExpiresByType image/ico "access plus 11 months"
+ExpiresByType image/svg+xml "access plus 4 months"
+ExpiresByType text/css "access plus 4 months"
+ExpiresByType text/javascript "access plus 4 months"
+ExpiresByType application/javascript "access plus 4 months"
+ExpiresByType application/x-javascript "access plus 4 months"
+ExpiresByType application/font-woff "access plus 1 year"
+ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# 2 DIAS
+<FilesMatch ".(xml|txt)$">
+Header set Cache-Control "max-age=172800, public, must-revalidate"
+</FilesMatch>
+# 4 Horas
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=14400, must-revalidate"
+</FilesMatch>
+
+##########################
+# 8. Indirección
+##########################
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si la URL es /indireccion/ejemplo, hacer una reescritura interna para /ejemplo
+    RewriteRule ^indireccion/ejemplo(/.*)?$ /ejemplo$1 [L]
+
+    # Aseguramos que si hay una petición directa a /ejemplo, dé 404
+    RewriteCond %{REQUEST_URI} ^/ejemplo$ [NC]
+    RewriteRule ^ - [R=404,L]
+</IfModule>
